@@ -1,0 +1,129 @@
+body{
+    width: 100%;
+    margin: 0;
+}
+.navbar{
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height:5%;
+    z-index: 1000;
+     backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+.logo{
+    margin-left: auto;
+    align-items: center;
+     margin-top: 1%;
+}
+.navlinks{
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+     margin-top: 1%;
+     border-radius: 8px;
+}
+.btnlogin{
+    margin-top: 0.6%;
+    margin-right: auto;
+    align-items: center;
+    height: 30px;
+    width: 80px;
+    border-radius: 111px;
+    background-color: #8b2acc;
+    color: white;
+    border: none;
+   
+}
+.btnlogin:hover {
+     background-color: #4620a3;
+     border-color: #4620a3;
+}
+.maindiv{
+    top: 50px;
+    width: 100vw;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    }
+.maincontent{
+    height: 100%;
+    gap: 4%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(247, 244, 244, 0.842);
+}
+.textmain{
+    font-size: 300%;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.colortext{
+    color: #582acc;
+}
+.textsec{
+    font-size: 50%;
+    margin-top: -2%;
+    margin-bottom: 5%;
+    color: #929ba8;
+}
+.imgprimaria{
+    border-radius: 8%;
+    height: 80%;
+    width: 40%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+}
+.imgsecundaria{
+    border-radius: 8%;
+    height: 50%;
+    width: 40%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+   
+}
+.função1{
+    gap: 4%;
+    height: 110%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.função2{
+    gap: 4%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue; 
+}
+.função3{
+    gap: 4%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.alertButton{
+    width: 200px;
+    height: 50px;
+    background-color: #582acc;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 100%;
+}
+.footer{
+    color: rgb(131, 131, 131);
+    width: 100vw;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1b1b1b;
+}

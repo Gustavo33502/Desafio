@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const greetingSpan = document.getElementById('userGreeting');
 
      function checkLogin() {
-    const savedUser = localStorage.getItem('smartLifeUser');
+    const savedUser = localStorage.getItem('AppgugaUser');
      if (savedUser) {
     loginButton.style.display = 'none';
         greetingSpan.style.display = 'inline-block';
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
    const userName = prompt("Por favor, digite seu nome para entrar:");
    
    if (userName && userName.trim() !== "") {
-       localStorage.setItem('smartLifeUser', userName);
+       localStorage.setItem('AppgugaUser', userName);
        checkLogin();
        alert("Login realizado com sucesso!");
    } else {

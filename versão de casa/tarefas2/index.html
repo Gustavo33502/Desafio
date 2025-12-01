@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Drag & Drop Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* CSS PERSONALIZADO */
+        
+        body {
+            background-color: #f8f9fa; /* Fundo cinza bem claro */
+            padding-top: 2rem;
+        }
+
+        /* Estilo das Colunas do Kanban */
+        .kanban-column {
+            min-height: 500px;
+            background-color: #e9ecef; /* Cinza do Bootstrap para área de drop */
+            border-radius: 8px;
+            padding: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        /* Feedback visual quando estamos arrastando algo por cima da coluna */
+        .kanban-column.drag-over {
+            background-color: #cfe2ff; /* Azul bem claro (variante do primary) */
+            border: 2px dashed #0d6efd; /* Borda tracejada Primary */
+        }
+
+        /* O Cartão (Tarefa) */
+        .kanban-card {
+            cursor: grab; /* Mãozinha aberta */
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .kanban-card:active {
+            cursor: grabbing; /* Mãozinha fechada ao clicar */
+        }
+
+        /* Classe adicionada automaticamente pelo JS quando o item está sendo arrastado */
+        .dragging {
+            opacity: 0.5;
+            border: 2px solid #0d6efd; /* Borda Primary */
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center text-primary mb-5 fw-bold">Meu Kanban <span class="badge bg-primary">Beta</span></h1>
+
+    <div class="row g-4">
+        
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-primary text-white fw-bold text-center">
+                    A Fazer
+                </div>
+                <div class="card-body p-2">
+                    <div class="kanban-column" id="todo">
+                        
+                        <div class="card kanban-card mb-3 shadow-sm" draggable="true">
+                            <div class="card-body p-3 border-start border-4 border-primary">
+                                <h6 class="card-title fw-bold">Estudar JavaScript</h6>
+                                <p class="card-text small text-muted">Aprender sobre DOM e Eventos.</p>
+                            </div>
+                        </div>
+
+                        <div class="card kanban-card mb-3 shadow-sm" draggable="true">
+                            <div class="card-body p-3 border-start border-4 border-primary">
+                                <h6 class="card-title fw-bold">Criar Layout HTML</h6>
+                                <p class="card-text small text-muted">Usar grid do Bootstrap.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-primary text-white fw-bold text-center bg-opacity-75">
+                    Em Progresso
+                </div>
+                <div class="card-body p-2">
+                    <div class="kanban-column" id="doing">
+                        
+                        <div class="card kanban-card mb-3 shadow-sm" draggable="true">
+                            <div class="card-body p-3 border-start border-4 border-primary">
+                                <h6 class="card-title fw-bold">Integração API</h6>
+                                <p class="card-text small text-muted">Conectar com o backend.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-primary text-white fw-bold text-center bg-opacity-50">
+                    Feito
+                </div>
+                <div class="card-body p-2">
+                    <div class="kanban-column" id="done">
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // 1. Selecionar todos os itens arrastáveis e as colunas (containers)
+    const draggables = document.querySelectorAll('.kanban-card');
+    const containers = document.querySelectorAll('.kanban-column');
+
+    // 2. Adicionar eventos aos cartões (Tarefas)
+    draggables.forEach(draggable => {
+        
+        // Quando começa a arrastar
+        draggable.addEventListener('dragstart', () => {
+            draggable.classList.add('dragging');
+        });
+
+        // Quando termina de arrastar
+        draggable.addEventListener('dragend', () => {
+            draggable.classList.remove('dragging');
+        });
+    });
+
+    // 3. Adicionar eventos às colunas (Áreas de Drop)
+    containers.forEach(container => {
+        
+        // O evento 'dragover' é disparado continuamente enquanto passamos o mouse por cima
+        container.addEventListener('dragover', e => {
+            // Importante: Por padrão, o HTML não deixa soltar. O preventDefault libera o drop.
+            e.preventDefault(); 
+            
+            // Adiciona efeito visual na coluna
+            container.classList.add('drag-over');
+
+            // Lógica Mágica: Descobrir onde inserir o elemento (em cima ou embaixo de outro)
+            const afterElement = getDragAfterElement(container, e.clientY);
+            
+            // Seleciona o elemento que estamos arrastando (que tem a classe .dragging)
+            const draggable = document.querySelector('.dragging');
+
+            if (afterElement == null) {
+                // Se não estamos em cima de ninguém, adiciona no final
+                container.appendChild(draggable);
+            } else {
+                // Se estamos em cima de alguém, insere antes desse alguém
+                container.insertBefore(draggable, afterElement);
+            }
+        });
+
+        // Remove o efeito visual quando o mouse sai da coluna
+        container.addEventListener('dragleave', () => {
+            container.classList.remove('drag-over');
+        });
+        
+        // Remove o efeito visual quando soltamos o item
+        container.addEventListener('drop', () => {
+            container.classList.remove('drag-over');
+        });
+    });
+
+    // 4. Função auxiliar matemática para calcular a posição do mouse
+    // Ela verifica se o mouse está acima ou abaixo do centro dos outros cartões
+    function getDragAfterElement(container, y) {
+        // Pega todos os cartões da coluna, exceto o que estamos arrastando
+        const draggableElements = [...container.querySelectorAll('.kanban-card:not(.dragging)')];
+
+        // O reduce vai retornar qual elemento está logo após o nosso cursor
+        return draggableElements.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2; // Distância do centro do box
+
+            // Se offset é negativo (estamos acima do centro do elemento) e é o maior negativo possível (mais próximo de 0)
+            if (offset < 0 && offset > closest.offset) {
+                return { offset: offset, element: child };
+            } else {
+                return closest;
+            }
+        }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }
+</script>
+
+</body>
+</html>

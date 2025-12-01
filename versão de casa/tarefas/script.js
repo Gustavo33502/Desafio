@@ -13,7 +13,7 @@ let tasks = JSON.parse(localStorage.getItem('tarefasData')) || [];
       
       li.innerHTML = `
       <span onclick="toggleTask(${index})">${task.text}</span>
-     <button class="btn-del" onclick="removeTask(${index})">🗑️</button>
+     <button class="btn-del"  onclick="removeTask(${index})">🗑️</button>
       `;
     taskList.appendChild(li);
    });

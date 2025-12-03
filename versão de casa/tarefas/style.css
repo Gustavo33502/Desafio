@@ -1,5 +1,0 @@
-body { min-height: 100vh; }
-  .main-box { max-width: 600px; margin-top: 50px; }
- .completed { text-decoration: line-through; color: gray; }
-  .task-item { cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-   .btn-del { border: none; background: transparent; color: #dc3545; }

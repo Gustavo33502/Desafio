@@ -1,1 +1,0 @@
-localstorage.setItem("name", "Abroba");

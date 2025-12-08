@@ -1,7 +1,37 @@
-body { font-family: sans-serif; }
- .card { border: none; border-radius: 12px; }
-  .navbar { box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-   .list-group-item { display: flex; justify-content: space-between; align-items: center; }
-  .amount-plus { color: green; font-weight: bold; }
- .amount-minus { color: red; font-weight: bold; }
-    .btn-delete { background-color: #ffcccc; color: red; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
+body {
+   font-family: sans-serif;
+}
+
+.card {
+   border: none;
+   border-radius: 12px;
+}
+
+.navbar {
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.amount-plus {
+   color: green;
+   font-weight: bold;
+}
+
+.amount-minus {
+   color: red;
+   font-weight: bold;
+}
+
+.btn-delete {
+   background-color: #ffcccc;
+   color: red;
+   border: none;
+   padding: 5px 10px;
+   border-radius: 5px;
+   cursor: pointer;
+}

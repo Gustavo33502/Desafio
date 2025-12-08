@@ -1,30 +1,37 @@
 body {
     padding-top: 70px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
 }
-.nav-item1{
+
+.nav-item1 {
     background-color: white;
-    border-top-left-radius:10px ;
-    border-bottom-left-radius:10px ;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
-.nav-item2{
+
+.nav-item2 {
     background-color: white;
     border-right: 10px;
-    border-top-right-radius:10px ;
-    border-bottom-right-radius:10px ;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
-.nav-item1:hover, .nav-item2:hover{
+
+.nav-item1:hover,
+.nav-item2:hover {
     background-color: #e9ecef;
 }
-.divnome{
+
+.divnome {
     padding: 5px 10px;
     border-radius: 8px;
 }
-.nome{
+
+.nome {
     font-size: 18px;
     background-color: white;
 }
+
 .hero-section {
     min-height: 90vh;
     position: relative;
@@ -36,16 +43,16 @@ body {
     content: '';
     position: absolute;
     top: 0;
-   right: 0;
+    right: 0;
     width: 50%;
     height: 100%;
-     background: radial-gradient(circle at center, rgba(111, 66, 193, 0.1) 0%, rgba(255,255,255,0) 70%);
+    background: radial-gradient(circle at center, rgba(111, 66, 193, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
     z-index: 0;
 }
 
 .hero-img {
-   
-     box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     z-index: 1;
     position: relative;
@@ -64,14 +71,14 @@ body {
 }
 
 .btn-primary:hover {
-     background-color: #4620a3;
-     border-color: #4620a3;
+    background-color: #4620a3;
+    border-color: #4620a3;
 }
 
 .icon-box {
     width: 50px;
     height: 50px;
-     display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -92,21 +99,25 @@ footer a {
 footer a:hover {
     color: white;
 }
-@media  screen and (max-width: 991px) {
-   .nav-item1{
-    background-color: white;
-    border-radius: 0;
-    
-}
-.nav-item2{
-    background-color: white;
-    border-radius: 0;
-}
-.divnome{
-    padding: 5px 10px;
-    border-radius: 0px;    
-}
-.navbar {
-    height: 8% ;
-}
+
+@media screen and (max-width: 991px) {
+    .nav-item1 {
+        background-color: white;
+        border-radius: 0;
+
+    }
+
+    .nav-item2 {
+        background-color: white;
+        border-radius: 0;
+    }
+
+    .divnome {
+        padding: 5px 10px;
+        border-radius: 0px;
+    }
+
+    .navbar {
+        height: 8%;
+    }
 }

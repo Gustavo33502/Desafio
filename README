@@ -1,2 +1,52 @@
-Estre projeto é a junção de 3 funções, um organizador financeiro, um organizador de tarefas e uma lista de compras inteligente, o primeiro acessoa irá mostrar a página inicial que contem o acesso as demais páginas.
-Ao acessar a página inicial é necessario fazer o login para conseguir navegar para as outras páginas.
+# 📱 App Guga - Suíte de Produtividade
+
+Bem-vindo ao **App Guga**, uma aplicação web desenvolvida para organizar três pilares essenciais do seu dia a dia: suas finanças, suas tarefas e suas compras.
+
+O projeto utiliza **LocalStorage**, o que significa que seus dados ficam salvos no navegador e não somem quando você fecha a página.
+
+---
+
+## 🚀 Funcionalidades
+
+O sistema é dividido em três módulos independentes:
+
+### 1. 💰 GugaFinanças (Controle Financeiro)
+Um gerenciador simples de fluxo de caixa para manter suas contas em dia.
+- **Entradas e Saídas:** Registre o que você ganha e o que gasta.
+- **Cálculo Automático:** O sistema calcula seu saldo total instantaneamente.
+- **Histórico:** Visualização clara de todas as transações recentes.
+
+### 2. ✅ GugaTarefas (Gerenciador de Tarefas)
+Foque no que importa e organize sua rotina diária.
+- **Lista To-Do:** Adicione tarefas pendentes de forma rápida.
+- **Status:** Marque tarefas como concluídas ou exclua as que já não são necessárias.
+- **Persistência:** Suas tarefas continuam lá mesmo se reiniciar o computador.
+
+### 3. 🛒 GugaListas (Lista de Compras Inteligente)
+Nunca mais esqueça itens no mercado com uma lista visual e organizada.
+- **Categorias Visuais:** Ícones automáticos para Comida 🍎, Bebida 🧃, Casa 🏠 e Outros 📦.
+- **Interface Animada:** Animações fluidas ao adicionar ou remover itens.
+- **Contador:** Acompanhe quantos itens ainda faltam comprar.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **HTML5:** Estrutura semântica.
+- **CSS3 & Bootstrap 5:** Estilização responsiva, moderna e uso de componentes visuais (Cards, Badges, Grids).
+- **JavaScript (ES6+):** Lógica de programação e manipulação do DOM.
+- **LocalStorage:** Banco de dados local do navegador para salvar as informações.
+- **Phosphor Icons:** Biblioteca de ícones moderna.
+
+---
+
+## 📂 Como usar
+
+1. Baixe o projeto.
+2. Navegue até a pasta `inicial`.
+3. Abra o arquivo `index.html` no seu navegador preferido.
+4. Use o menu de navegação superior para alternar entre as funções.
+
+---
+
+Desenvolvido por **Gustavo**.

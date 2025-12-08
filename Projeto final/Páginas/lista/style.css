@@ -1,0 +1,93 @@
+body {
+    background: linear-gradient(135deg, #54ac42 0%, #ff4b2b 100%);
+    min-height: 100vh;
+}
+
+ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background-color: #ff9999;
+    border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-track {
+    background-color: #fff0f0;
+}
+
+.bg-food {
+    background-color: #ffeaa7;
+    color: #d35400;
+}
+
+.bg-drink {
+    background-color: #74b9ff;
+    color: #0984e3;
+}
+
+.bg-home {
+    background-color: #a29bfe;
+    color: #6c5ce7;
+}
+
+.bg-other {
+    background-color: #dfe6e9;
+    color: #636e72;
+}
+
+.list-group-item {
+    transition: all 0.5s ease;
+    border: none;
+    border-bottom: 1px solid #ffebeb;
+    margin-bottom: 5px;
+    border-radius: 8px !important;
+    animation: slideIn 0.4s ease forwards;
+    max-height: 150px;
+    overflow: hidden;
+}
+
+.list-group-item:hover {
+    background-color: #fff5f5;
+    transform: translateX(5px);
+    border-left: 4px solid #dc3545;
+}
+
+.completed {
+    opacity: 0.5;
+    background-color: #f8f9fa;
+    text-decoration: line-through;
+}
+
+.cat-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.fall {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border: none;
+    pointer-events: none;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

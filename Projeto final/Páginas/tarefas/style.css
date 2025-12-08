@@ -1,16 +1,16 @@
-body { 
-    min-height: 100vh; 
-    overflow-x: hidden; /* Evita barra de rolagem horizontal */
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-.main-box { 
- 
-  width: 80%;
-    margin-top: 30px; 
+.main-box {
+
+    width: 80%;
+    margin-top: 30px;
     margin-bottom: 50px;
 }
 
-/* Área onde soltamos os cards */
+
 .kanban-column {
     min-height: 400px;
     background-color: #e9ecef;
@@ -19,24 +19,24 @@ body {
     transition: background-color 0.2s, border 0.2s;
 }
 
-/* Feedback visual ao arrastar por cima */
+
 .kanban-column.drag-over {
-    background-color: #cfe2ff; /* Azul claro */
+    background-color: #cfe2ff;
     border: 2px dashed #0d6efd;
 }
 
-/* O Cartão da Tarefa */
+
 .kanban-card {
     background: white;
     padding: 10px 15px;
     margin-bottom: 10px;
     border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     cursor: grab;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 4px solid #6c757d; /* Cor padrão */
+    border-left: 4px solid #6c757d;
     transition: transform 0.2s;
 }
 
@@ -44,13 +44,13 @@ body {
     cursor: grabbing;
 }
 
-/* Estilo enquanto está sendo arrastado (transparente) */
+
 .dragging {
     opacity: 0.5;
     border: 2px solid #0d6efd;
 }
 
-/* Botão de deletar discreto */
+
 .btn-del {
     border: none;
     background: transparent;
@@ -58,22 +58,34 @@ body {
     opacity: 0.6;
     transition: opacity 0.2s;
 }
+
 .btn-del:hover {
     opacity: 1;
 }
 
-/* Cores específicas das bordas dos cards baseadas na coluna (opcional, feito via JS ou CSS avançado) */
-#todo .kanban-card { border-left-color: #d61919; }
-#doing .kanban-card { border-left-color: #ffc107; }
-#done .kanban-card { border-left-color: #198754; text-decoration: line-through; color: gray; }
+
+#todo .kanban-card {
+    border-left-color: #d61919;
+}
+
+#doing .kanban-card {
+    border-left-color: #ffc107;
+}
+
+#done .kanban-card {
+    border-left-color: #198754;
+    text-decoration: line-through;
+    color: gray;
+}
 
 @media screen and (min-width: 100px)and(max-width: 599px) {
     .main-box {
         width: 90%;
-    } 
+    }
 }
+
 @media screen and (min-width: 900px)and(max-width: 1199px) {
     .main-box {
         width: 90%;
-    } 
+    }
 }
